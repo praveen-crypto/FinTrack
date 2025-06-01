@@ -87,12 +87,12 @@ export default function AnalysisPage() {
           <form onSubmit={calculateAnalysis}>
             <CardContent className="space-y-4">
               <div>
-                <Label htmlFor="monthlyIncome">Total Net Monthly Income ($)</Label>
-                <Input id="monthlyIncome" type="number" placeholder="e.g., 5000" value={monthlyIncome} onChange={(e) => setMonthlyIncome(e.target.value === '' ? '' : parseFloat(e.target.value))} required className="mt-1" />
+                <Label htmlFor="monthlyIncome">Total Net Monthly Income (₹)</Label>
+                <Input id="monthlyIncome" type="number" placeholder="e.g., 75000" value={monthlyIncome} onChange={(e) => setMonthlyIncome(e.target.value === '' ? '' : parseFloat(e.target.value))} required className="mt-1" />
               </div>
               <div>
-                <Label htmlFor="totalEmis">Total Monthly EMI Payments ($)</Label>
-                <Input id="totalEmis" type="number" placeholder="e.g., 350" value={totalEmis} onChange={(e) => setTotalEmis(e.target.value === '' ? '' : parseFloat(e.target.value))} required className="mt-1" />
+                <Label htmlFor="totalEmis">Total Monthly EMI Payments (₹)</Label>
+                <Input id="totalEmis" type="number" placeholder="e.g., 15000" value={totalEmis} onChange={(e) => setTotalEmis(e.target.value === '' ? '' : parseFloat(e.target.value))} required className="mt-1" />
               </div>
             </CardContent>
             <CardFooter className="flex justify-end">
@@ -116,7 +116,7 @@ export default function AnalysisPage() {
                   <BadgeDollarSign className="h-7 w-7 text-primary" />
                   <div>
                     <p className="text-sm text-muted-foreground">Total Monthly EMI Payments</p>
-                    <p className="text-2xl font-semibold">${results.totalMonthlyEmis.toLocaleString()}</p>
+                    <p className="text-2xl font-semibold">₹{results.totalMonthlyEmis.toLocaleString()}</p>
                   </div>
                 </div>
               </div>
@@ -142,7 +142,7 @@ export default function AnalysisPage() {
                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary lucide lucide-user-check"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="17.5 8 19 9.5 22.5 6"/></svg>
                   <div>
                     <p className="text-sm text-muted-foreground">Min. Recommended Monthly Salary</p>
-                    <p className="text-2xl font-semibold">${results.minimumSalary.toLocaleString()}</p>
+                    <p className="text-2xl font-semibold">₹{results.minimumSalary.toLocaleString()}</p>
                   </div>
                 </div>
                 {results.minimumSalary > 0 && (

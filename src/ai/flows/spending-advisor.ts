@@ -15,12 +15,12 @@ const SpendingAdvisorInputSchema = z.object({
   spendingData: z
     .string()
     .describe(
-      'A detailed breakdown of the user\'s spending habits, including categories and amounts spent in each category.'
+      'A detailed breakdown of the user\'s spending habits, including categories and amounts spent in each category (e.g., Groceries: ₹10000, Dining out: ₹5000).'
     ),
-  income: z.number().describe('The user\'s monthly income.'),
-  fixedExpenses: z.number().describe('The user\'s total fixed monthly expenses.'),
-  savingsGoal: z.number().describe('The user\'s monthly savings goal.'),
-  emiPayments: z.number().describe('The user\'s total monthly EMI payments.'),
+  income: z.number().describe('The user\'s monthly income in their local currency (e.g., ₹).'),
+  fixedExpenses: z.number().describe('The user\'s total fixed monthly expenses in their local currency (e.g., ₹).'),
+  savingsGoal: z.number().describe('The user\'s monthly savings goal in their local currency (e.g., ₹).'),
+  emiPayments: z.number().describe('The user\'s total monthly EMI payments in their local currency (e.g., ₹).'),
 });
 
 export type SpendingAdvisorInput = z.infer<typeof SpendingAdvisorInputSchema>;
@@ -39,7 +39,7 @@ const prompt = ai.definePrompt({
   name: 'spendingAdvisorPrompt',
   input: {schema: SpendingAdvisorInputSchema},
   output: {schema: SpendingAdvisorOutputSchema},
-  prompt: `You are a personal finance advisor. Analyze the user's spending data and provide personalized advice on how to reduce spending.
+  prompt: `You are a personal finance advisor. Analyze the user's spending data and provide personalized advice on how to reduce spending. Assume all monetary values are in the user's local currency (e.g., ₹).
 
   Here's the user's financial situation:
   Monthly Income: {{{income}}}

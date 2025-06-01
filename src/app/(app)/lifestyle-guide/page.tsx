@@ -71,12 +71,12 @@ export default function LifestyleGuidePage() {
           <form onSubmit={handleSubmit}>
             <CardContent className="space-y-4">
               <div>
-                <Label htmlFor="spendingPower">Spending Power ($)</Label>
-                <Input id="spendingPower" name="spendingPower" type="number" placeholder="e.g., 1500" value={formData.spendingPower || ''} onChange={handleChange} required className="mt-1" />
+                <Label htmlFor="spendingPower">Spending Power (₹)</Label>
+                <Input id="spendingPower" name="spendingPower" type="number" placeholder="e.g., 50000" value={formData.spendingPower || ''} onChange={handleChange} required className="mt-1" />
               </div>
               <div>
-                <Label htmlFor="totalMonthlyExpenses">Total Monthly Expenses ($)</Label>
-                <Input id="totalMonthlyExpenses" name="totalMonthlyExpenses" type="number" placeholder="e.g., 3000" value={formData.totalMonthlyExpenses || ''} onChange={handleChange} required className="mt-1" />
+                <Label htmlFor="totalMonthlyExpenses">Total Monthly Expenses (₹)</Label>
+                <Input id="totalMonthlyExpenses" name="totalMonthlyExpenses" type="number" placeholder="e.g., 60000" value={formData.totalMonthlyExpenses || ''} onChange={handleChange} required className="mt-1" />
               </div>
               <div>
                 <Label htmlFor="incomeToDebtRatio">Income to Debt Ratio (e.g., 0.3 for 30%)</Label>

@@ -79,8 +79,8 @@ export default function ExpensesPage() {
                   <Input id="expDescription" placeholder="e.g., Weekly groceries" value={currentExpense.description} onChange={e => setCurrentExpense({...currentExpense, description: e.target.value})} className="mt-1" required />
                 </div>
                 <div>
-                  <Label htmlFor="expAmount">Amount ($)</Label>
-                  <Input id="expAmount" type="number" placeholder="e.g., 75.50" value={currentExpense.amount} onChange={e => setCurrentExpense({...currentExpense, amount: e.target.value})} className="mt-1" required />
+                  <Label htmlFor="expAmount">Amount (₹)</Label>
+                  <Input id="expAmount" type="number" placeholder="e.g., 1500" value={currentExpense.amount} onChange={e => setCurrentExpense({...currentExpense, amount: e.target.value})} className="mt-1" required />
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -133,7 +133,7 @@ export default function ExpensesPage() {
                         <TableCell className="font-medium">{exp.description}</TableCell>
                         <TableCell>{exp.category}</TableCell>
                         <TableCell>{exp.date}</TableCell>
-                        <TableCell className="text-right">${exp.amount.toLocaleString()}</TableCell>
+                        <TableCell className="text-right">₹{exp.amount.toLocaleString()}</TableCell>
                         <TableCell className="text-right">
                           <Button variant="ghost" size="icon" onClick={() => handleRemoveExpense(exp.id)} aria-label="Remove expense">
                             <Trash2 className="h-4 w-4 text-destructive" />

@@ -3,6 +3,7 @@
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Button } from "@/components/ui/button"
 import { Bell } from "lucide-react"
+import { ThemeSwitcher } from "@/components/theme-switcher";
 
 interface HeaderProps {
   title: string;
@@ -15,7 +16,7 @@ export function Header({ title }: HeaderProps) {
       <div className="flex flex-1 items-center justify-between">
         <h1 className="text-2xl font-semibold font-headline">{title}</h1>
         <div className="flex items-center gap-2">
-          {/* Placeholder for future actions like notifications or user menu */}
+          <ThemeSwitcher />
           <Button variant="ghost" size="icon" aria-label="Notifications">
             <Bell className="h-5 w-5" />
           </Button>

@@ -78,7 +78,7 @@ export default function SpendingAdvisorPage() {
                 <Textarea
                   id="spendingData"
                   name="spendingData"
-                  placeholder="e.g., Groceries: $400, Dining out: $200, Subscriptions: $50, Shopping: $150..."
+                  placeholder="e.g., Groceries: ₹10000, Dining out: ₹5000, Subscriptions: ₹1000, Shopping: ₹4000..."
                   value={formData.spendingData}
                   onChange={handleChange}
                   className="mt-1 min-h-[100px]"
@@ -87,22 +87,22 @@ export default function SpendingAdvisorPage() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <Label htmlFor="income">Monthly Income ($)</Label>
-                  <Input id="income" name="income" type="number" placeholder="e.g., 5000" value={formData.income || ''} onChange={handleChange} required className="mt-1" />
+                  <Label htmlFor="income">Monthly Income (₹)</Label>
+                  <Input id="income" name="income" type="number" placeholder="e.g., 75000" value={formData.income || ''} onChange={handleChange} required className="mt-1" />
                 </div>
                 <div>
-                  <Label htmlFor="fixedExpenses">Fixed Expenses ($)</Label>
-                  <Input id="fixedExpenses" name="fixedExpenses" type="number" placeholder="e.g., 1500" value={formData.fixedExpenses || ''} onChange={handleChange} required className="mt-1" />
+                  <Label htmlFor="fixedExpenses">Fixed Expenses (₹)</Label>
+                  <Input id="fixedExpenses" name="fixedExpenses" type="number" placeholder="e.g., 30000" value={formData.fixedExpenses || ''} onChange={handleChange} required className="mt-1" />
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <Label htmlFor="savingsGoal">Savings Goal ($)</Label>
-                  <Input id="savingsGoal" name="savingsGoal" type="number" placeholder="e.g., 500" value={formData.savingsGoal || ''} onChange={handleChange} required className="mt-1" />
+                  <Label htmlFor="savingsGoal">Savings Goal (₹)</Label>
+                  <Input id="savingsGoal" name="savingsGoal" type="number" placeholder="e.g., 10000" value={formData.savingsGoal || ''} onChange={handleChange} required className="mt-1" />
                 </div>
                 <div>
-                  <Label htmlFor="emiPayments">EMI Payments ($)</Label>
-                  <Input id="emiPayments" name="emiPayments" type="number" placeholder="e.g., 350" value={formData.emiPayments || ''} onChange={handleChange} required className="mt-1" />
+                  <Label htmlFor="emiPayments">EMI Payments (₹)</Label>
+                  <Input id="emiPayments" name="emiPayments" type="number" placeholder="e.g., 5000" value={formData.emiPayments || ''} onChange={handleChange} required className="mt-1" />
                 </div>
               </div>
             </CardContent>

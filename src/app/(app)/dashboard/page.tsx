@@ -15,16 +15,16 @@ import {
 import { Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, BarChart as RechartsBarChart } from "recharts"
 
 const initialExpenseData = [
-  { category: 'Groceries', amount: 300, fill: "var(--color-groceries)" },
-  { category: 'Utilities', amount: 150, fill: "var(--color-utilities)" },
-  { category: 'Transport', amount: 100, fill: "var(--color-transport)" },
-  { category: 'Entertainment', amount: 250, fill: "var(--color-entertainment)" },
-  { category: 'Other', amount: 120, fill: "var(--color-other)" },
+  { category: 'Groceries', amount: 10000, fill: "var(--color-groceries)" },
+  { category: 'Utilities', amount: 5000, fill: "var(--color-utilities)" },
+  { category: 'Transport', amount: 3000, fill: "var(--color-transport)" },
+  { category: 'Entertainment', amount: 7000, fill: "var(--color-entertainment)" },
+  { category: 'Other', amount: 4000, fill: "var(--color-other)" },
 ];
 
 const chartConfig = {
   amount: {
-    label: "$",
+    label: "₹",
   },
   groceries: {
     label: "Groceries",
@@ -50,13 +50,13 @@ const chartConfig = {
 
 
 export default function DashboardPage() {
-  const [spendingPower, setSpendingPower] = useState(1500);
-  const [totalExpenses, setTotalExpenses] = useState(800);
+  const [spendingPower, setSpendingPower] = useState(50000);
+  const [totalExpenses, setTotalExpenses] = useState(25000);
   const [savingsProgress, setSavingsProgress] = useState(40); // Percentage
-  const [savingsGoal, setSavingsGoal] = useState(500);
+  const [savingsGoal, setSavingsGoal] = useState(10000);
   const [upcomingEmis, setUpcomingEmis] = useState([
-    { name: 'Car Loan', amount: 300, dueDate: '15th' },
-    { name: 'Phone EMI', amount: 50, dueDate: '20th' },
+    { name: 'Car Loan', amount: 15000, dueDate: '15th' },
+    { name: 'Phone EMI', amount: 2000, dueDate: '20th' },
   ]);
   const [expenseData, setExpenseData] = useState(initialExpenseData);
 
@@ -80,7 +80,7 @@ export default function DashboardPage() {
               <DollarSign className="h-5 w-5 text-primary" />
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold text-primary">${spendingPower.toLocaleString()}</div>
+              <div className="text-3xl font-bold text-primary">₹{spendingPower.toLocaleString()}</div>
               <p className="text-xs text-muted-foreground">Available for this month</p>
             </CardContent>
           </Card>
@@ -91,7 +91,7 @@ export default function DashboardPage() {
               <ListChecks className="h-5 w-5 text-destructive" />
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold text-destructive">${totalExpenses.toLocaleString()}</div>
+              <div className="text-3xl font-bold text-destructive">₹{totalExpenses.toLocaleString()}</div>
               <p className="text-xs text-muted-foreground">Spent this month</p>
             </CardContent>
           </Card>
@@ -102,7 +102,7 @@ export default function DashboardPage() {
               <TrendingUp className="h-5 w-5 text-green-500" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-green-500">${(savingsGoal * savingsProgress / 100).toLocaleString()} / ${savingsGoal.toLocaleString()}</div>
+              <div className="text-2xl font-bold text-green-500">₹{(savingsGoal * savingsProgress / 100).toLocaleString()} / ₹{savingsGoal.toLocaleString()}</div>
               <Progress value={savingsProgress} aria-label={`${savingsProgress}% of savings goal achieved`} className="mt-2 h-3" indicatorClassName="bg-green-500" />
             </CardContent>
           </Card>
@@ -153,7 +153,7 @@ export default function DashboardPage() {
                         <p className="font-medium">{emi.name}</p>
                         <p className="text-xs text-muted-foreground">Due: {emi.dueDate}</p>
                       </div>
-                      <p className="font-semibold text-primary">${emi.amount.toLocaleString()}</p>
+                      <p className="font-semibold text-primary">₹{emi.amount.toLocaleString()}</p>
                     </li>
                   ))}
                 </ul>

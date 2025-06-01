@@ -42,7 +42,7 @@ export default function SpendingPowerPage() {
     setTimeout(() => setShowResult(true), 10); // Trigger animation
      toast({
       title: "Calculation Complete",
-      description: `Your estimated spending power is $${result.toLocaleString()}.`,
+      description: `Your estimated spending power is ₹${result.toLocaleString()}.`,
     });
   };
 
@@ -64,20 +64,20 @@ export default function SpendingPowerPage() {
           <form onSubmit={calculateSpendingPower}>
             <CardContent className="space-y-4">
               <div>
-                <Label htmlFor="income">Total Net Monthly Income ($)</Label>
-                <Input id="income" type="number" placeholder="e.g., 5000" value={income} onChange={(e) => setIncome(e.target.value === '' ? '' : parseFloat(e.target.value))} required className="mt-1" />
+                <Label htmlFor="income">Total Net Monthly Income (₹)</Label>
+                <Input id="income" type="number" placeholder="e.g., 75000" value={income} onChange={(e) => setIncome(e.target.value === '' ? '' : parseFloat(e.target.value))} required className="mt-1" />
               </div>
               <div>
-                <Label htmlFor="fixedExpenses">Total Fixed Expenses ($)</Label>
-                <Input id="fixedExpenses" type="number" placeholder="e.g., 1500" value={fixedExpenses} onChange={(e) => setFixedExpenses(e.target.value === '' ? '' : parseFloat(e.target.value))} required className="mt-1" />
+                <Label htmlFor="fixedExpenses">Total Fixed Expenses (₹)</Label>
+                <Input id="fixedExpenses" type="number" placeholder="e.g., 30000" value={fixedExpenses} onChange={(e) => setFixedExpenses(e.target.value === '' ? '' : parseFloat(e.target.value))} required className="mt-1" />
               </div>
               <div>
-                <Label htmlFor="savingsGoal">Monthly Savings Goal ($)</Label>
-                <Input id="savingsGoal" type="number" placeholder="e.g., 500" value={savingsGoal} onChange={(e) => setSavingsGoal(e.target.value === '' ? '' : parseFloat(e.target.value))} required className="mt-1" />
+                <Label htmlFor="savingsGoal">Monthly Savings Goal (₹)</Label>
+                <Input id="savingsGoal" type="number" placeholder="e.g., 10000" value={savingsGoal} onChange={(e) => setSavingsGoal(e.target.value === '' ? '' : parseFloat(e.target.value))} required className="mt-1" />
               </div>
               <div>
-                <Label htmlFor="totalEmis">Total Monthly EMI Payments ($)</Label>
-                <Input id="totalEmis" type="number" placeholder="e.g., 350" value={totalEmis} onChange={(e) => setTotalEmis(e.target.value === '' ? '' : parseFloat(e.target.value))} required className="mt-1" />
+                <Label htmlFor="totalEmis">Total Monthly EMI Payments (₹)</Label>
+                <Input id="totalEmis" type="number" placeholder="e.g., 5000" value={totalEmis} onChange={(e) => setTotalEmis(e.target.value === '' ? '' : parseFloat(e.target.value))} required className="mt-1" />
               </div>
             </CardContent>
             <CardFooter className="flex justify-end">
@@ -100,7 +100,7 @@ export default function SpendingPowerPage() {
             </CardHeader>
             <CardContent>
               <p className="text-5xl font-bold text-primary text-center py-6">
-                ${spendingPower.toLocaleString()}
+                ₹{spendingPower.toLocaleString()}
               </p>
               <p className="text-center text-muted-foreground">This is the amount you can spend this month after all deductions.</p>
             </CardContent>
